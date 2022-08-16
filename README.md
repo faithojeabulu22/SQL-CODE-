@@ -13,4 +13,14 @@ inner join [SQL tutorial ].dbo.EmployeeSalary
      on EmployeeDemographics.EmployeeID =EmployeeSalary.EmployeeID
 
 where JobTitle ='Salesman'
-group by JobTitle
+group by JobTitle ;
+
+
+UNION // joining two tables together with their similar features
+select EmployeeID,FirstName,Age
+from [SQL tutorial ].dbo.EmployeeDemographics
+union 
+select  EmployeeID,JobTitle,Salary
+from
+[SQL tutorial ].dbo.EmployeeSalary
+order by EmployeeID ;
